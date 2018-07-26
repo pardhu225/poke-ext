@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "PokeBot",
+  "description": "A botter for pokemon-vortex",
+  "version": "1.0",
+
+  "browser_action": {
+
+   "default_popup": "popup.html"
+  },
+  "permissions": [
+   "activeTab",
+   "storage"
+ ],
+
+   "content_scripts" : [{
+     "matches" : ["https://*.pokemon-vortex.com/battle-sidequest/*","https://*.pokemon-vortex.com/battle-user/*"],
+     "js" : ["jquery.js","training.js"]
+   },
+   {
+     "matches" : ["https://*.pokemon-vortex.com/map/*"],
+     "js" : ["jquery.js","pkemap.js"]
+   },
+   {
+     "matches" : ["https://*.pokemon-vortex.com/*"],
+     "js" : ["jquery.js","overall.js"]
+   }]
+}

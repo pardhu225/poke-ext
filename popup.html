@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Poke Bot</title>
+    <style media="screen">
+      html,body {
+        width: 300px;
+        height: 200px;
+        font-family: arial;
+      }
+      h1 {border-bottom: solid 1px black; text-align: right;}
+
+      .button-panel {
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PokeBot</h1>
+    <section id='maps'>
+      <div class="button-panel">
+        <div>
+          <input type="radio" name="mode" value="and" checked onclick="updateStats({mode:'and'})">AND
+        </div>
+        <div>
+          <input type="radio" name="mode" value="or" onclick="updateStats({mode:'or'})">OR
+        </div>
+      </div>
+
+      <div class="button-panel">
+        <div>
+          <label>Legends: </label>
+          <input type="checkbox" id="legend" checked onclick="updateStats({legend = this.checked;})">
+        </div>
+        <div>
+          <label>Uniques: </label>
+          <input type="checkbox" id="unique" onclick="updateStats({unique = this.checked;})">
+        </div>
+        <div>
+          <label>Non-normals: </label>
+          <input type="checkbox" id="nonnormal" checked onclick="updateStats({nonnormal = this.checked;})">
+        </div>
+        <button type="button" name="button" onclick='updateStats({type:"ping"})'></button>
+      </div>
+    </section>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="main.js"/>
+  </body>
+</html>
